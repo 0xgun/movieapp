@@ -4,5 +4,9 @@
 {%endblock title%}
 
 {% block content%}
-<h3 class="mt-5 text-center">Movie App</h3>>
+<h3 class="mt-5 text-center">Movie App</h3>
+
+{% for m in movie %}
+<p>{{m.name}}-{{m.year}}</p>
+{% endfor%}
 {% endblock content%}
