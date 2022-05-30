@@ -1,10 +1,33 @@
 {% extends 'layout.html' %}
 {% block title%}
 <title>{{Movie.name}} Movie</title>
+<style>
+    .iframe-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        width: 100%;
+    }
+
+    .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
 {%endblock title%}
 
 {% block content%}
 <div class="row mt-5">
-    {{movie.name}} - {{movie.trailer}} ({{movie.year}})
+    <div class="card" style="width: 100%">
+        <div class="iframe-container">
+            <iframe src="//www.youtube.com/embed/{{movie.trailer}}" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+            <h4>{{movie.name}} ({{movie.year}})</h4>
+        </div>
+    </div>
 </div>
 {% endblock content%}
