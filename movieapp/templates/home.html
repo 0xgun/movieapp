@@ -5,8 +5,25 @@
 
 {% block content%}
 <h3 class="mt-5 text-center">Movie App</h3>
+<div class="row mt-5">
+    {% for m in movie %}
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="https://img.youtube.com/vi/{{m.trailer}}/maxresdefault.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{m.name}}</h5>
+                {% if m.star > 3 %}
+                <span class="badge badge-pill badge-danger">Hot</span>
+                {% else%}
+                <span class="badge badge-pill badge-warning">Just Ok</span>
 
-{% for m in movie %}
-<p>{{m.name}}-{{m.year}}</p>
-{% endfor%}
+                {%endif%}
+                <p class="card-text">{{m.description}}</p>
+                <a href="#" class="btn btn-primary">Trailer</a>
+            </div>
+        </div>
+    </div>
+    {% endfor%}
+</div>
+
 {% endblock content%}

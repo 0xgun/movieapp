@@ -2,7 +2,7 @@ from unicodedata import name
 from django.db import models
 
 # Create your models here.
-class movie(models.Model):
+class Movie(models.Model):
     name=models.CharField(max_length=200,null=False)
     description=models.TextField(null=False)
     trailer=models.CharField(max_length=200,null=False)
