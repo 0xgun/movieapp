@@ -4,4 +4,4 @@ from .models import *
 class MyMovie(admin.ModelAdmin):
     list_display=('name','description','trailer','year','star','show')
     list_filter = ('star','show')
-admin.site.register(movie,MyMovie)
+admin.site.register(Movie,MyMovie)
